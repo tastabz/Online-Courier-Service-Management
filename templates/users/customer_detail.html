@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+{% block bootstrap_css %} {% bootstrap_css %} {% endblock %}
+
+{% block title %} Profile {% endblock %}
+
+
+{% block content %}
+    <div class="content-section">
+        {% bootstrap_messages %}
+        <h1>Customer ID: {{ object.id }}</h1>
+        <fieldset>
+            <legend class="border-bottom mb-4">{{ object.get_full_name }} Profile</legend>
+            <p>Email: {{ object.email }}</p>
+        </fieldset>
+    </div>
+{% endblock %}

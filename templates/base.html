@@ -1,0 +1,67 @@
+{% load static %}
+{% load bootstrap5 %}
+{% block bootstrap_css %} {% endblock %}
+{% bootstrap_javascript %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon/favicon.ico' %}"/>
+        <title>{% block title %} Home {% endblock %}</title>
+
+        {% include 'navigation.html' %}
+        {% block override_style %}
+            <link rel="stylesheet" href=" {% static 'style.css' %}">
+        {% endblock %}
+        {% block add_style %}  {% endblock %}
+
+        <!-- font awesome CDN -->
+	    <script src="https://use.fontawesome.com/eb66dccf5d.js"></script>
+        <!-- font color -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+    {% block body %} {% endblock %}
+        <main role="main" class="container">
+            {% block content %} {% endblock %}
+        </main>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <h1>Our Currier System provides logistics support in all 64 districts and 490+ sub districts across Bangladesh</h1>
+            <a href="" class="hero-btn">CONTACT US</a>
+        </section>
+
+
+        <!-- Footer -->
+        <section class="footer">
+            <!-- <h4>About Us</h4> -->
+            <p>Copyright © 2021 Online Currier Management. All rights reserved. Privacy Policy Terms and Condition</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by group 7</p>
+        </section>
+
+        <!-- JavaScript for Toggle Menu -->
+        <script>
+
+            const navLinks = document.getElementById("navLinks");
+
+            function showMenu(){
+                navLinks.style.right = "0";
+            }
+            function hideMenu(){
+                navLinks.style.right = "-200px";
+            }
+
+        </script>
+    </body>
+</html>

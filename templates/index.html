@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+{% block bootstrap_css %} {% bootstrap_css %} {% endblock %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+    <section class="header">
+        <div class = "text-box">
+            <h1>Bangladesh's Biggest Courier System</h1>
+            <p>
+                Online Courier is Bangladesh’s most trusted on-demand last mile logistics network offering
+                tech-enabled one stop delivery solutions.<br> Our vision has been to become the operating
+                system for e-commerce in Bangladesh, through a combination of world-class infrastructure,
+                logistics operations of the highest quality and cutting-edge technology capabilities.
+            </p>
+            <a href="" class="hero-btn">Visit Us To know More</a>
+        </div>
+    </section>
+	<!-- Reasons -->
+	<section class = "reasons">
+		<h1> Why we are the best?</h1>
+		<!-- <p>kjdfkl dlfkjkldjf dklfjfkldj lflkjdfklj ldjfdlkj lfkdjfklj</p> -->
+
+		<div class="row">
+			<div class="reason-col">
+				<h3>Fulfillment solution</h3>
+				<p>Through warehousing and fulfillment solution, offers customized service packages with inventory management support, order processing, packaging, after sales support.</p>
+			</div>
+
+			<div class="reason-col">
+				<h3>Cash on Delivery</h3>
+				<p>We provide the option of cash on delivery by collecting the payment in cash at the time of delivery</p>
+			</div>
+
+			<div class="reason-col">
+				<h3>Reverse Logistics</h3>
+				<p>Reverse logistics is provided that allows customers to return their products</p>
+			</div>
+		</div>
+	</section>
+	<!-- Services -->
+	<section class="services">
+		<h1>End-to-end logistics solutions for everyone</h1>
+		<!-- <p>kjdfkl dlfkjkldjf dklfjfkldj lflkjdfklj ldjfdlkj lfkdjfklj</p> -->
+
+		<div class="row">
+			<div class="service-col">
+				<img src="{% static 'images/small-business.jpg' %}" alt="">
+				<div class="layer">
+					<h3>Small businesses</h3>
+				</div>
+			</div>
+
+			<div class="service-col">
+				<img src="{% static 'images/individuals.jpg' %}" alt="">
+				<div class="layer">
+					<h3>Individuals</h3>
+				</div>
+			</div>
+
+			<div class="service-col">
+				<img src="{% static 'images/enterprises.jpg' %}" alt="">
+				<div class="layer">
+					<h3>Enterprises</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Facilities -->
+	<section class="facilities">
+		<h1>Our Facilities</h1>
+		<!-- <p>kjdfkl dlfkjkldjf dklfjfkldj lflkjdfklj ldjfdlkj lfkdjfklj</p> -->
+
+		<div class="row">
+			<div class="facilities-col">
+				<img src="{% static 'images/Industry-leading-tech.png' %}" alt="">
+				<h3>Industry-leading tech</h3>
+				<p>With a brilliant team of engineers driving everything we do, WE offer the best possible service experience powered by superior technology</p>
+			</div>
+
+			<div class="facilities-col">
+				<img src="{% static 'images/Nationwide-coverage.png' %}" alt="">
+				<h3>Nationwide coverage</h3>
+				<p>We offer the widest logistics network, covering 64 districts and 490+ sub districts across Bangladesh</p>
+			</div>
+
+			<div class="facilities-col">
+				<img src="{% static 'images/Fastest-solutions.png' %}" alt="">
+				<h3>Fastest solutions</h3>
+				<p>Backed by an agile team and dynamic operations, we promise to find the fastest solutions for your needs</p>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Reviews -->
+	<section class="reviews">
+		<h1>What our customer says</h1>
+		<!-- <p>kjdfkl dlfkjkldjf dklfjfkldj lflkjdfklj ldjfdlkj lfkdjfklj</p> -->
+
+		<div class="row">
+			<div class="review-col">
+				<img src="{% static 'images/user1.jpg' %}" alt="">
+				<div>
+					<p>Faltu Currier, Worst Experience</p>
+					<h3>Asif Ahmed</h3>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+				</div>
+			</div>
+
+			<div class="review-col">
+				<img src="{% static 'images/user2.jpg' %}" alt="">
+				<div>
+					<p>Best currier service in bangladesh, highly recommended</p>
+					<h3>Jaber Al Siam</h3>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half-o"></i>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

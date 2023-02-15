@@ -1,0 +1,29 @@
+{% load static %}
+
+<nav style="background-color: #1b1b1b">
+    <a href="{% url 'users:home' %}"><img src="{% static 'images/logo-courier.png' %}" alt=""></a>
+    <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+            <li><a href="{% url 'users:home' %}">HOME</a></li>
+            <li><a href="{% url 'parcels:list' %}">PARCELS</a></li>
+            <li><a href="{% url 'parcels:track' %}">TRACK PARCEL</a></li>
+            <li><a href="{% url 'parcels:cost_calculator' %}">COST CALCULATOR</a></li>
+            <li><a href="{% url 'jobs:list' %}">CARRIER</a></li>
+
+            {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                    <li><a href="/admin/">ADMIN</a></li>
+                {% else %}
+                    <li><a href="{% url 'users:customer_update' user.id %}">PROFILE</a></li>
+                {% endif %}
+                <li><a href="{% url 'users:logout' %}">LOGOUT</a></li>
+
+            {% else %}
+                <li><a href="{% url 'users:login' %}">LOGIN</a></li>
+                <li><a href="{% url 'users:customer_signup' %}">SIGNUP</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+</nav>

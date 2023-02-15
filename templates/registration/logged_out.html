@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+{% block bootstrap_css %} {% bootstrap_css %} {% endblock %}
+
+{% block content %}
+    <div class="content-section">
+        {% bootstrap_messages %}
+        <h2>You have been logged out</h2>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                <a href="{% url 'users:login' %}">Log In Again</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}

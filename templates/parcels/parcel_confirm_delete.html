@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block bootstrap_css %} {% bootstrap_css %} {% endblock %}
+
+{% block content %}
+    <div class="content-section">
+      <form method="post">
+          {% bootstrap_messages %}
+          {% csrf_token %}
+          <div class="d-grid gap-2">
+              <button class="btn btn-outline-info" type="submit">Delete</button>
+          </div>
+      </form>
+    </div>
+{% endblock %}

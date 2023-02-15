@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block bootstrap_css %} {% bootstrap_css %} {% endblock %}
+{% block title %} Jobs {% endblock %}
+
+{% block content %}
+    <!-- ------------ Recent Parcels ---------------- -->
+    {# context is object_list #}
+    {% bootstrap_messages %}
+    <section id="jobs">
+        <div class="container">
+            <h4 align="center"> LIST OF YOUR PARCELS, CLICK TO VIEW PROGRESS </h4><br>
+            {% for parcel in object_list %}
+                <div class="company-details">
+                    <div class="reason-col">
+                        <a href="{% url 'parcels:detail' parcel.id %}">
+                            <h4><b> {{ parcel.title }} </b></h4>
+                            <i class="fa fa-glide-g"></i> <span> Tracking ID: {{ parcel.id }} </span><br>
+                            <i class="fa fa-clock-o"></i> <span> Booked On: {{ parcel.booked_on }} </span><br>
+                            <i class="fa fa-spinner"></i> <span> Status: {{ parcel.get_status_display }} </span><br>
+                        </a>
+                    </div>
+                </div>
+            {% empty %}
+                <li>You don't have any parcel yet!</li>
+            {% endfor %}
+        </div>
+        <div align="center" class="d-grid gap-2">
+            <a href="{% url 'parcels:create' %}">
+                <button class="btn btn-outline-info" type="submit">Place a new parcel</button>
+            </a>
+        </div>
+    </section>
+{% endblock %}
+

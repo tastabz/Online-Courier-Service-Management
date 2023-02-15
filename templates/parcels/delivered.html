@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block override_style %} <link rel="stylesheet" href=" {% static 'parcels/css/style_delivered.css' %}"> {% endblock %}
+
+{% block content %}
+    <!------ Track Parcel content ------->
+	<div class="progress">
+		<ul class="ul">
+			<li>
+				<img src="{% static 'images/pending.png' %}" alt=""><br>
+				<i class="fa fa-check"></i>
+				<p>Pending</p>
+			</li>
+			<li>
+				<img src="{% static 'images/processing.png' %}" alt=""><br>
+				<i class="fa fa-check"></i>
+				<p>Processing</p>
+			</li>
+            <li>
+				<img src="{% static 'images/picked.png' %}" alt=""><br>
+				<i class="fa fa-check"></i>
+				<p>Picked</p>
+			</li>
+			<li>
+				<img src="{% static 'images/on-delivery.png' %}" alt=""><br>
+				<i class="fa fa-check"></i>
+				<p>On Delivery</p>
+			</li>
+			<li>
+				<img src="{% static 'images/delivered.png' %}" alt=""><br>
+				<i class="fa fa-check"></i>
+				<p>Delivered</p>
+			</li>
+		</ul>
+	</div>
+{% endblock %}
+

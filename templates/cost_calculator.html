@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+{% block bootstrap_css %} {% bootstrap_css %} {% endblock %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+	<!------ Cost Calculator ------->
+	<div class="booking-form-box">
+		<div class="booking-form">
+			<label>Product Weight</label>
+            <label>
+                <input type="text" class="form-control" placeholder="Weight">
+            </label>
+
+            <div class="input-grp">
+				<label>Product Category</label>
+                <label>
+                    <select class="custom-select">
+                        <option value="1">AC</option>
+                        <option value="2">Book</option>
+                        <option value="3">AC</option>
+                        <option value="4">Book</option>
+                        <option value="5">AC</option>
+                        <option value="6">Book</option>
+                        <option value="7">AC</option>
+                        <option value="8">Book</option>
+                    </select>
+                </label>
+            </div>
+			<div class="input-grp">
+				<label>Delivery Area</label>
+                <label>
+                    <select class="custom-select">
+                        <option value="1">AC</option>
+                        <option value="2">Book</option>
+                        <option value="3">AC</option>
+                        <option value="4">Book</option>
+                        <option value="5">AC</option>
+                        <option value="6">Book</option>
+                        <option value="7">AC</option>
+                        <option value="8">Book</option>
+                    </select>
+                </label>
+            </div>
+
+			<div class="radio-btn">
+                <label>
+                    <input type="radio" class="btn" name="check" checked="checked">
+                </label> <span>Product Type</span>
+                <label>
+                    <input type="radio" class="btn" name="check">
+                </label> <span>Fragile</span>
+                <label>
+                    <input type="radio" class="btn" name="check">
+                </label> <span>Liquid</span>
+
+			</div>
+
+			<div class="input-grp">
+				<label>Product Quantity</label>
+                <label>
+                    <input type="number" class="form-control" value="1">
+                </label>
+            </div>
+
+			<div class="input-grp">
+				<button type="button" class = "btn btn-primary flight">Calculate</button>
+			</div>
+
+		</div>
+	</div>
+{% endblock %}

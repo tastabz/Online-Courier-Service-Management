@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block bootstrap_css %} {% bootstrap_css %} {% endblock %}
+
+{% block content %}
+    <div class="content-section">
+        <form method="post">
+            {% bootstrap_messages %}
+            {% csrf_token %}
+            {% bootstrap_form parcel_form %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Pickup Location</legend>
+                {% bootstrap_form pickup_address_form %}
+            </fieldset>
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Receiver Information</legend>
+                {% bootstrap_form receiver_form %}
+                {% bootstrap_form receiver_address_form %}
+            </fieldset>
+            <div class="d-grid gap-2">
+                <button class="btn btn-outline-info" type="submit">Place</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

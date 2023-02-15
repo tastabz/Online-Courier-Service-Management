@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block override_style %}  {% endblock %}
+
+{% block content %}
+    {% block progress %} {% endblock %}
+    <p align="center"><a href="{% url 'parcels:create_issue' object.pk %}" class="hero-btn red-btn">Create Issue</a></p>
+{% endblock %}

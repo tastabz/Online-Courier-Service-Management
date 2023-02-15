@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+{% block bootstrap_css %} {% bootstrap_css %} {% endblock %}
+{% block title %} Apply {% endblock %}
+
+{% block content %}
+    <!------ Job Description ------->
+    {# context is object #}
+    <section class="about-us">
+        <div class="row">
+            <div class="about-col">
+                <h1> {{ object.title }} </h1>
+                <p> {{ object.get_type_display }} {{ object.position }} </p>
+                <h2> Description </h2>
+                <p> {{ object.description }} </p>
+                <i class="fa fa-briefcase"></i> <span> Experience: {{ object.experience_requirements }} </span><br>
+                ৳ Salary: {{ object.salary }} </span><br>
+                <i class="fa fa-map-marker"></i> <span> Location: {{ object.location }} </span><br>
+                <i class="fa fa-user-times"></i> <span> Vacancy: {{ object.vacancy }} </span><br><br>
+
+                <h2> Skill Requirements </h2>
+                <p>
+                    {{ object.skill_requirements }}<br>
+                    {# {% for skill in object.skill_requirements %}#}
+                    {# <i class="fa fa-circle-o"></i>{{ skill }}<br>#}
+                    {# {% endfor %}#}
+                </p>
+                <h2>Education Requirements</h2>
+                <p>
+                    <i class="fa fa-user-graduate"></i><b> {{ object.education_requirements }} </b><br>
+                </p>
+                <a href="{% url 'jobs:apply' object.pk %}" class="hero-btn red-btn">APPLY NOW</a>
+            </div>
+            <div class="about-col">
+                <img src="{% static 'images/about.jpg' %}" alt="">
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
